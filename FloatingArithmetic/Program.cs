@@ -20,9 +20,21 @@ namespace FloatingArithmetic
             // decimal and double need Conversion to Work Together
             decimal airplanePricePerFeet = airplanePrice / (decimal)airplaneLength;
 
+            double doubleNumber = 10.0;
+            double oneTenthOfDoubleNumber = 0.1;
+
+            // Addition of Multiple Doubles May Result Different as double is Very Precise
+            double addedOneTenthOfDoubleNumber = oneTenthOfDoubleNumber + oneTenthOfDoubleNumber
+                                               + oneTenthOfDoubleNumber + oneTenthOfDoubleNumber
+                                               + oneTenthOfDoubleNumber + oneTenthOfDoubleNumber
+                                               + oneTenthOfDoubleNumber + oneTenthOfDoubleNumber
+                                               + oneTenthOfDoubleNumber + oneTenthOfDoubleNumber;
+
             Console.WriteLine($"Speed of Light: {speedOfLight} m/s\n" +
                               $"Airplane Triangle Area: {airplaneTriangleArea} feet\n" +
-                              $"Airplane Price Per Feet: ${airplanePricePerFeet}");
+                              $"Airplane Price Per Feet: ${airplanePricePerFeet}\n" +
+                              $"{doubleNumber} is Equal to {addedOneTenthOfDoubleNumber}: " +
+                              $"{doubleNumber == addedOneTenthOfDoubleNumber}\n");
         }
     }
 }
