@@ -20,21 +20,32 @@ namespace FloatingArithmetic
             // decimal and double need Conversion to Work Together
             decimal airplanePricePerFeet = airplanePrice / (decimal)airplaneLength;
 
-            double doubleNumber = 10.0;
+            double doubleNumber = 1.0;
             double oneTenthOfDoubleNumber = 0.1;
 
-            // Addition of Multiple Doubles May Result Different as double is Very Precise
+            /* double is 2-based, so Doing Arithmetic Operation of
+             * Doubles Not Divisible by 2 Results Tiny Error */
             double addedOneTenthOfDoubleNumber = oneTenthOfDoubleNumber + oneTenthOfDoubleNumber
                                                + oneTenthOfDoubleNumber + oneTenthOfDoubleNumber
                                                + oneTenthOfDoubleNumber + oneTenthOfDoubleNumber
                                                + oneTenthOfDoubleNumber + oneTenthOfDoubleNumber
                                                + oneTenthOfDoubleNumber + oneTenthOfDoubleNumber;
 
+            /* decimal is 10-based, so Doing Arithmetic Operation of
+             * Decimals Leads to High-Precision */
+            decimal decimalNumber = 1.0m;
+            decimal oneThirdOfDecimalNumber = decimalNumber / 3.0m;
+            decimal addedOneThirdOfDecimalNumber = oneThirdOfDecimalNumber
+                                                 + oneThirdOfDecimalNumber
+                                                 + oneThirdOfDecimalNumber;
+
             Console.WriteLine($"Speed of Light: {speedOfLight} m/s\n" +
                               $"Airplane Triangle Area: {airplaneTriangleArea} feet\n" +
                               $"Airplane Price Per Feet: ${airplanePricePerFeet}\n" +
                               $"{doubleNumber} is Equal to {addedOneTenthOfDoubleNumber}: " +
-                              $"{doubleNumber == addedOneTenthOfDoubleNumber}\n");
+                              $"{doubleNumber == addedOneTenthOfDoubleNumber}\n" +
+                              $"{decimalNumber} is Equal to {addedOneThirdOfDecimalNumber}: " +
+                              $"{decimalNumber == addedOneThirdOfDecimalNumber}");
         }
     }
 }
