@@ -39,13 +39,19 @@ namespace FloatingArithmetic
                                                  + oneThirdOfDecimalNumber
                                                  + oneThirdOfDecimalNumber;
 
+            // NaN and infinity in double
+            double divisionValue1 = 0.0 / 0.0; // NaN, not possible in decimal
+            double divisionValue2 = 1.0 / 0.0; // infinity, not possible in decimal
+
             Console.WriteLine($"Speed of Light: {speedOfLight} m/s\n" +
                               $"Airplane Triangle Area: {airplaneTriangleArea} feet\n" +
                               $"Airplane Price Per Feet: ${airplanePricePerFeet}\n" +
                               $"{doubleNumber} is Equal to {addedOneTenthOfDoubleNumber}: " +
                               $"{doubleNumber == addedOneTenthOfDoubleNumber}\n" +
                               $"{decimalNumber} is Equal to {addedOneThirdOfDecimalNumber}: " +
-                              $"{decimalNumber == addedOneThirdOfDecimalNumber}");
+                              $"{decimalNumber == addedOneThirdOfDecimalNumber}\n" +
+                              $"0.0 / 0.0 = {divisionValue1}\n" +
+                              $"1.0 / 0.0 = {divisionValue2}");
         }
     }
 }
